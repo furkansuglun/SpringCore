@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="collectionInjectionModelId" class="_03.collection.injection.CollectionInjectionModel">
+	
+		<property name="myList">
+		
+			<list>
+				<value>elemnet1</value>
+				<value>elemnet2</value>
+				<value>elemnet3</value>
+				<value>elemnet4</value>
+			</list>
+		</property>
+		
+		<property name="mySet">
+			<set>
+				<value>100</value>
+				<value>200</value>
+				<value>300</value>
+				<value>400</value>
+				<value>500</value>
+			</set>
+		
+		
+		</property>
+		
+		<property name="myMap">
+
+			<map>
+				<entry key="key1">
+					<value>value1</value>
+				</entry>
+
+
+				<entry key="key2">
+					<value>value2</value>
+				</entry>
+
+				<entry key="key3">
+					<value>value3</value>
+				</entry>
+
+			</map>
+
+		</property>
+		
+		<property name="props">
+		
+			<props>
+				<prop key="prop1">value1</prop>
+				<prop key="prop2">value2</prop>
+				<prop key="prop3">value3</prop>
+				<prop key="prop4">value4</prop>
+				<prop key="prop5">value5</prop>
+			</props>
+		</property>
+		
+		
+		
+	</bean>
+	
+
+</beans>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- DI işlemi obje olusturma yönetim kontrol -->
+	<bean id="carIdForLassa" class="_01.spring.model.Car">
+	
+		<property name="wheel" ref="lassaId"></property>
+	
+	</bean> <!-- setter injection   -->
+	<bean id="carIdForGoodYear" class="_01.spring.model.Car">
+	
+		<property name="wheel" ref="goodYearId"></property>
+	
+	</bean>
+	<bean id="carIdForPirelli" class="_01.spring.model.Car">
+	
+		<property name="wheel" ref="pirelliId"></property>
+	
+	</bean>
+	
+	
+	<bean id="lassaId" class="_01.spring.model.LassaTire"></bean>
+	<bean id="goodYearId" class="_01.spring.model.GoodYearTire"></bean>
+	<bean id="pirelliId" class="_01.spring.model.PirelliTire"></bean>
+
+</beans>

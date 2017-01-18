@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd  ">
+
+<!-- context component scan tagini kullanabilmek icin ilgili xmlns i ekle!
+
+xmlns:context="http://www.springframework.org/schema/context"
+
+xsi:schemaLocation da ekle!
+
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd 
+
+ -->
+ 
+<!--base package attirbute te , sterotype annotationlarin aranacgi paket bilgisini veriyoruz;
+burada  _01 dedigimiz _01.dao _01.domain _0d.service _01.test package larida aranir.
+burada spesifik package bilgisi verebiliriz.
+  -->
+
+<context:component-scan base-package="_02.JSR330.dao , _02.JSR330.service"/>
+
+
+</beans>

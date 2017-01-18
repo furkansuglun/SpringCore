@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="personId" class="_01.setter.injection.Person">
+		<property name="name" value="Furkan"/>
+		<property name="surname" value="Suglun"/>
+		<property name="salary" value="12000"/>
+		<property name="birthDay" value="1994"/>
+		<property name="gender" value="M"/>
+	</bean>
+
+	<bean id="personId2" class="_01.setter.injection.Person" p:name="TestName" p:surname="TestSurname" p:gender="M" p:salary="1000">
+		
+	</bean>
+	
+	<bean id="keyboardId" class="_01.setter.injection.Keyboard">
+		<property name="model" value="K360"/>
+		<property name="price" value="50"/>
+	</bean>
+
+	<bean id="computerId" class="_01.setter.injection.Computer">
+		<property name="brand" value="Lenovo"/>
+		<property name="price" value="2500"/>
+		<property name="keyboard" ref="keyboardId"></property>
+		<!-- bir baska bean 'i inject etmek icin ref attribute'unden yararlaniriz. -->
+	</bean>
+
+
+</beans>

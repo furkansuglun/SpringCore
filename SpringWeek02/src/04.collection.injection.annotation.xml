@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd ">
+
+
+	<!-- 
+	util:list
+	util:map
+	util:set
+	
+	xmlns:util="http://www.springframework.org/schema/util"
+	
+	util:properties icin su xsi:schmelocation ekledik.
+	
+	
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util.xsd 
+	 -->
+
+	<!-- ilgili verilen paket/paketlerde @Service @Repository @Controller @Component gibi taglari arar bind eder.  -->
+	<context:component-scan base-package="_04.collection.injection.annotation"/>
+
+	<util:list id="annotationList">
+		<value>element1</value>
+		<value>element2</value>
+	</util:list>
+
+	<util:set id="annotationSet">
+		<value type="int">100</value>
+		<value type="int">200</value>
+	</util:set>
+
+	<util:map id="annotationMap">
+		<entry key="key1">
+			<value>value1</value>
+		</entry>
+
+
+		<entry key="key2">
+			<value>value2</value>
+		</entry>
+	</util:map>
+
+
+	<util:properties id="annotationProperties">
+		<prop key="propkey1">propvalue1</prop>
+		<prop key="propkey2">propvalue2</prop>
+	</util:properties>
+
+
+</beans>

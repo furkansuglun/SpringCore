@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	
+<!-- @AutoWired annotation ini kullanabilmek için context-annotation config tagi yeterli olacaktır
+package scan yapmadigimiz noktada yani @Controller @Service @Repository @Component taglarini kullanimiyorsak 
+context component scan tagina gerek yoktur. 
+xml ile bean tanimini yaptigimiz noktada context-annotation config yeterli olacaktir. -->
+
+
+	<!-- <context:annotation-config/> silersek address bilgisi null gelecektir
+	
+	Person [name=Furkan, surname=Suglun, address=Address [city=null]] -->	
+	<context:annotation-config/>
+ 
+ 
+	<bean id="personId" class="_12.autowiring.annotation.Person">
+		<property name="name" value="levent" />
+		<property name="surname" value="erguder" />
+	</bean>
+	
+	<bean id="addressId" class="_12.autowiring.annotation.Address">
+		<property name="city" value="Istanbul" />
+	</bean>
+	
+	<bean id="addressId2" class="_12.autowiring.annotation.Address">
+		<property name="city" value="Istanbul" />
+	</bean>
+</beans>

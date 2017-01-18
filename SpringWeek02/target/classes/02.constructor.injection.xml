@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="personId" class="_02.constructor.injection.Person">
+		<constructor-arg value="Furkan"/>
+		<constructor-arg value="Suglun"/>
+		<constructor-arg value="12000"/>
+		<constructor-arg value="1994"/>
+		<constructor-arg value="M"/>
+	</bean>
+	
+	<bean id="personId2" class="_02.constructor.injection.Person" c:name="TestName" c:surname="TestSurname" c:salary="1000"
+			c:birthDay="1994" c:gender="M">
+		<!-- constructor oldugu için butun c argslar verilmeli -->
+	</bean>
+
+
+	<bean id="confuseId" class="_02.constructor.injection.ConstrutorConfuse">
+		<constructor-arg value="1000"></constructor-arg>
+	</bean>
+
+	<bean id="confuseId2" class="_02.constructor.injection.ConstrutorConfuse">
+		<constructor-arg value="1000" type="int"></constructor-arg>
+	</bean>
+	
+	<bean id="confuseId3" class="_02.constructor.injection.ConstrutorConfuse">
+		<constructor-arg>
+			<value>1000</value>
+		</constructor-arg>
+	</bean>
+	
+	
+	<bean id="keyboardId" class="_02.constructor.injection.Keyboard">
+		<constructor-arg value="K360"/>
+		<constructor-arg value="50"></constructor-arg>
+	</bean>
+
+	<bean id="computerId" class="_02.constructor.injection.Computer">
+		<constructor-arg value="Lenovo"/>
+		<constructor-arg value="3000"/>
+		<constructor-arg ref="keyboardId"/>
+		<!-- bir baska bean 'i inject etmek icin ref attribute'unden yararlaniriz. -->
+	</bean>
+	
+
+</beans>
